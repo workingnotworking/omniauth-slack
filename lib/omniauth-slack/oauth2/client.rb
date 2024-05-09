@@ -47,9 +47,9 @@ module OmniAuth
         end
                 
         # Wraps OAuth2::Client#get_token to pass in the omniauth-slack AccessToken class.
-        def get_token(params, access_token_opts = {}, access_token_class = OmniAuth::Slack::OAuth2::AccessToken) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
+        def get_token(params, access_token_opts = {}) # rubocop:disable Metrics/AbcSize, Metrics/MethodLength
           debug{"params #{params}, access_token_opts #{access_token_opts}"}
-          rslt = super(params, access_token_opts, access_token_class)
+          rslt = super(params, access_token_opts)
           debug{"Client #{self} built AccessToken #{rslt}"}
           rslt
         end

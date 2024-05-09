@@ -46,6 +46,7 @@ module OmniAuth
         auth_scheme: :basic_auth,
         raise_errors: false, # MUST be false to allow Slack's get-token response from v2 API.
         history: Array.new,
+        access_token_class: OmniAuth::Slack::OAuth2::AccessToken,
       }
       
       # Authorization token-exchange API call options.
